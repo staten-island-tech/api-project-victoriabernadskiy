@@ -17,7 +17,7 @@ async function getData(URL) {
 
 getData(URL); */
 
-async function getData() {
+/* async function getData() {
   let res = await fetch(
     "https://api.nasa.gov/planetary/apod?api_key=NDeFF4wPtMyuheK8gYrnP8BJlJwZxlIG5mPsyshP"
   );
@@ -41,4 +41,19 @@ const fetchNASAData = async () => {
   } catch (error) {
     console.log(error)
   }
+} */
+
+const url = 'https://api.nasa.gov/planetary/apod?api_key='
+const api_key = config.NDeFF4wPtMyuheK8gYrnP8BJlJwZxlIG5mPsyshP
+
+const fetchNASAData = async () => {
+  try {
+    const response = await fetch(`${url}${api_key}`)
+    const data = await response.json()
+    console.log('NASA APOD data', data)
+  } catch (error) {
+    console.log(error)
+  }
 }
+
+fetchNASAData()
