@@ -1,4 +1,4 @@
-
+import "../css/style.css"
 
 // NASA APOD
 const config = {

@@ -1,0 +1,27 @@
+/* font-family: 'Lato', sans-serif; */
+
+:root {
+    --black: #000;
+    --dark-blue: #1F2833;
+    --dark-purple: #3e1763;
+    --dark-blue2: rgb(32, 24, 138);
+    --light-blue: #185688;
+    --white: rgb(255, 255, 255);
+    --gray: #969697;
+  
+  
+    --primary: var(--light-blue);
+    --secondary: var(--dark-blue);
+    --third: var(--new-blue);
+  
+  }
+  .night {
+    --primary: var(--black);
+    --secondary: var(--dark-blue);
+    --third: var(--gray)
+  }
+  .day {
+    --primary: var(--light-blue);
+    --secondary: var(--dark-blue2);
+    --third: var(--white)
+  }
