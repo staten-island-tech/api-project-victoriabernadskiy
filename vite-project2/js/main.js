@@ -1,5 +1,5 @@
 import "../css/style.css"
-
+import { DOMselectors } from "./dom"
 
 // NASA APOD
 const config = {
@@ -81,3 +81,12 @@ const Cool = async () => {
 
 Cool()
 
+document.querySelector("#btn").addEventListener("click", function () {
+  if (document.body.classList.contains("day")) {
+    document.body.classList.add("night");
+    document.body.classList.remove("day");
+  } else {
+    document.body.classList.add("day");
+    document.body.classList.remove("night");
+  }
+});

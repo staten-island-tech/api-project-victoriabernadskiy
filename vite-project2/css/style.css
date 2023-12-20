@@ -26,3 +26,8 @@
     --third: var(--white)
   }
  
+  body {
+    background-color: var(--primary);
+    font-family: 'Lato', sans-serif
+  }
+
