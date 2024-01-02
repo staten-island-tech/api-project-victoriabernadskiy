@@ -91,3 +91,12 @@ document.querySelector("#btn").addEventListener("click", function () {
   }
 });
 
+function Insert(arr) {
+    DOMselectors.card_holder.insertAdjacentHTML('afterbegin', 
+    `  <div class="apod_card">
+    <h1 class="title">${fetchNASAData.title}</h1>
+    <img src="${fetchNASAData.}" alt="" class="img">
+    <h2 class="explanation"></h2>
+    <h2 class="date"></h2>
+  </div>`)};
+
