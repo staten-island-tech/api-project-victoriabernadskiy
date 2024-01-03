@@ -31,3 +31,27 @@
     font-family: 'Lato', sans-serif
   }
 
+  .apod_card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary);
+    justify-content: space-around;
+    border: 3px black;
+    margin: 30px;
+    margin-top: 5%;
+    border: 8px solid white;
+    border-radius: 10px;
+    font-size: 8px;
+  }
+
+  .img {
+    height: 1000px;
+    width: 400px;
+  }

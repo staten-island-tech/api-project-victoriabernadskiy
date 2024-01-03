@@ -105,3 +105,8 @@ function Insert(obj) {
 const nasadata = await fetchNASAData()
 console.log(nasadata)
 Insert(nasadata)
+
+
+function Enter(planet) {
+  DOMselectors.pl
+}
