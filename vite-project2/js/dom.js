@@ -8,7 +8,8 @@ const DOMselectors = {
     title: document.querySelector("title"),
     img: document.querySelector("img"), //img is url
     explanation: document.querySelector("explanation"),
-    date: document.querySelector("date")
+    date: document.querySelector("date"),
+    card_holder: document.getElementById("class_holder")
 }
 
 export {DOMselectors}

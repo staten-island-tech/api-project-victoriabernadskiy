@@ -13,6 +13,7 @@ const fetchNASAData = async () => {
     const response = await fetch(`${url}${api_key}`)
     const data = await response.json()
     console.log('NASA APOD data', data)
+    return data
   } catch (error) {
     console.log(error)
   }
@@ -91,12 +92,16 @@ document.querySelector("#btn").addEventListener("click", function () {
   }
 });
 
-function Insert(arr) {
+function Insert(obj) {
     DOMselectors.card_holder.insertAdjacentHTML('afterbegin', 
     `  <div class="apod_card">
-    <h1 class="title">${fetchNASAData.title}</h1>
-    <img src="${fetchNASAData.}" alt="" class="img">
-    <h2 class="explanation"></h2>
-    <h2 class="date"></h2>
+    <h1 class="title">${obj.title}</h1>
+    <img src="${obj.url}" alt="" class="img">
+    <h2 class="explanation">${obj.explanation}</h2>
+    <h2 class="date">${obj.date}</h2>
   </div>`)};
 
+
+const nasadata = await fetchNASAData()
+console.log(nasadata)
+Insert(nasadata)
