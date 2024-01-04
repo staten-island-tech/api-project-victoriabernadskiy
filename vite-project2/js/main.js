@@ -103,10 +103,28 @@ function Insert(obj) {
 
 
 const nasadata = await fetchNASAData()
-console.log(nasadata)
 Insert(nasadata)
 
 
 function Enter(planet) {
-  DOMselectors.pl
+  DOMselectors.planet_holder.insertAdjacentHTML('afterbegin',
+  ` <div class="planet_card">
+  <h1 class="englishName">${planet.englishName}</h1>
+  <h2 class="bodyType">${planet.bodyType}</h2>
+  <h2 class="discoveryDate">${planet.discoveryDate}</h2>
+  <h2 class="discoveredBy">${planet.discoveredBy}</h2>
+  <h2 class="gravity">${planet.gravity}</h2>
+  <h2 class="aroundPlanet">${planet.aroundPlanet}</h2>
+</div>`
+  )
 }
+
+const planetData = await Cool()
+Enter(planetData)
+
+DOMselectors.form.addEventListener("submit", (event) => {
+  event.preventDefault
+  var bar = `${DOMselectors.englishName.value}` ;
+  console.log(bar)
+}
+)

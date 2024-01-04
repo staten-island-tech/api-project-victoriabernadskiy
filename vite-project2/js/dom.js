@@ -16,7 +16,8 @@ const DOMselectors = {
     discoveryDate: document.querySelector("discoveryDate"),
     discoveredBy: document.querySelector("discoveredBy"),
     gravity: document.querySelector("gravity"),
-    aroundPlanet: document.querySelector("aroundPlanet")
+    aroundPlanet: document.querySelector("aroundPlanet"),
+    planet_holder: document.getElementById("planet_holder")
 }
 
 export {DOMselectors}

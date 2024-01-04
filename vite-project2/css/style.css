@@ -27,18 +27,17 @@
   }
  
   body {
-    background-color: var(--primary);
+    background-image: url();
     font-family: 'Lato', sans-serif
   }
 
   .apod_card {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 1000px;
+    width: fit-content;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     background-color: var(--secondary);
@@ -52,6 +51,11 @@
   }
 
   .img {
-    height: 1000px;
-    width: 400px;
+    height: 50%;
+    width: 50%
   }
+
+  .explanation {
+    background-color: aliceblue;
+    margin: 10px;
+   }
