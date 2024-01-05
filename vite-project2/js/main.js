@@ -81,7 +81,7 @@ const Cool = async () => {
 }
 
 Cool()
-
+/* 
 document.querySelector("#btn").addEventListener("click", function () {
   if (document.body.classList.contains("day")) {
     document.body.classList.add("night");
@@ -91,7 +91,7 @@ document.querySelector("#btn").addEventListener("click", function () {
     document.body.classList.remove("night");
   }
 });
-
+ */
 function Insert(obj) {
     DOMselectors.card_holder.insertAdjacentHTML('afterbegin', 
     `  <div class="apod_card">
@@ -105,26 +105,28 @@ function Insert(obj) {
 const nasadata = await fetchNASAData()
 Insert(nasadata)
 
+DOMselectors.form.addEventListener("submit", function (event) {
+  event.preventDefault
+  var bar = `${DOMselectors.search_bar.value}` ;
+  console.log(bar)
+  const URL4 = `https://api.le-systeme-solaire.net/rest/bodies/${bar}`
+}
+)
+
 
 function Enter(planet) {
-  DOMselectors.planet_holder.insertAdjacentHTML('afterbegin',
+  planet.forEach((moon) => {
+    document.querySelector(".planet_holder").insertAdjacentHTML('afterbegin', )
   ` <div class="planet_card">
-  <h1 class="englishName">${planet.englishName}</h1>
-  <h2 class="bodyType">${planet.bodyType}</h2>
-  <h2 class="discoveryDate">${planet.discoveryDate}</h2>
-  <h2 class="discoveredBy">${planet.discoveredBy}</h2>
-  <h2 class="gravity">${planet.gravity}</h2>
-  <h2 class="aroundPlanet">${planet.aroundPlanet}</h2>
+  <h1 class="englishName">${moon.englishName}</h1>
+  <h2 class="bodyType">${moon.bodyType}</h2>
+  <h2 class="discoveryDate">${moon.discoveryDate}</h2>
+  <h2 class="discoveredBy">${moon.discoveredBy}</h2>
+  <h2 class="gravity">${moon.gravity}</h2>
+  <h2 class="aroundPlanet">${moon.aroundPlanet}</h2>
 </div>`
-  )
+})
 }
 
 const planetData = await Cool()
 Enter(planetData)
-
-DOMselectors.form.addEventListener("submit", (event) => {
-  event.preventDefault
-  var bar = `${DOMselectors.englishName.value}` ;
-  console.log(bar)
-}
-)

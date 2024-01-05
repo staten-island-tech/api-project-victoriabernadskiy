@@ -1,5 +1,5 @@
 /* font-family: 'Lato', sans-serif; */
-
+/* 
  :root {
     --black: #000;
     --dark-blue: #1F2833;
@@ -24,14 +24,60 @@
     --primary: var(--light-blue);
     --secondary: var(--dark-blue2);
     --third: var(--white)
-  }
+  } */
  
   body {
-    background-image: url();
+    background-image: url("public/stars.jpg");
     font-family: 'Lato', sans-serif
   }
 
   .apod_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(19, 14, 51);
+    justify-content: space-around;
+    border: 3px black;
+    margin: 30px;
+    margin-top: 5%;
+    border: 8px solid white;
+    border-radius: 10px;
+    font-size: 8px;
+  }
+
+  .img {
+    height: 40%;
+    width: 40%
+  }
+
+  .explanation {
+    background-color: aliceblue;
+    margin: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+   }
+
+  .date {
+    background-color: aliceblue;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+
+  .title {
+    font-size: 30px;
+    color: aliceblue;
+  }
+
+  #form {
+    color: aliceblue;
+  }
+
+  .planet_card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,12 +96,7 @@
     font-size: 8px;
   }
 
-  .img {
-    height: 50%;
-    width: 50%
+  .button {
+    margin-left: 50px;
+    background-color: bisque;
   }
-
-  .explanation {
-    background-color: aliceblue;
-    margin: 10px;
-   }
