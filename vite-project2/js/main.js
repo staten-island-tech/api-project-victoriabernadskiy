@@ -8,79 +8,25 @@ const config = {
 const url = 'https://api.nasa.gov/planetary/apod?api_key='
 const api_key = config.NASA_API_KEY
 
-const fetchNASAData = async () => {
+
+
+
+
+//smth cool maybe
+
+const URL4 = `https://api.le-systeme-solaire.net/rest/bodies/`;
+const FetchURL = async (request) => {
   try {
-    const response = await fetch(`${url}${api_key}`)
+    const response = await fetch(`${request}`)
     const data = await response.json()
-    console.log('NASA APOD data', data)
+    console.log('COOL data', data)
     return data
   } catch (error) {
     console.log(error)
   }
 }
 
-fetchNASAData()
-
-
-// # of people in space rn
-const URL = `http://api.open-notify.org/astros.json`;
-const Example = async () => {
-  try {
-    const response = await fetch(`${URL}`)
-    const data = await response.json()
-    console.log('NUMBER OF PPL', data)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-Example()
-
-
-// location of ISS rn
-const URL2 = `http://api.open-notify.org/iss-now.json`;
-const Maybe = async () => {
-  try {
-    const response = await fetch(`${URL2}`)
-    const data = await response.json()
-    console.log('MAYBE data', data)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-Maybe()
-
-//ISS api another (easier to read)
-
-const URL3 = `https://api.wheretheiss.at/v1/satellites/25544`;
-const Possibly = async () => {
-  try {
-    const response = await fetch(`${URL3}`)
-    const data = await response.json()
-    console.log('POSSIBLY data', data)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-Possibly()
-
-
-//smth cool maybe
-
-const URL4 = `https://api.le-systeme-solaire.net/rest/bodies/`;
-const Cool = async () => {
-  try {
-    const response = await fetch(`${URL4}`)
-    const data = await response.json()
-    console.log('COOL data', data)
-  } catch (error) {
-    console.log(error)
-  }
-}
-
-Cool()
+FetchURL()
 /* 
 document.querySelector("#btn").addEventListener("click", function () {
   if (document.body.classList.contains("day")) {
@@ -102,21 +48,34 @@ function Insert(obj) {
   </div>`)};
 
 
-const nasadata = await fetchNASAData()
+const nasadata = await FetchURL(`${url}${api_key}`)
 Insert(nasadata)
 
-DOMselectors.form.addEventListener("submit", function (event) {
-  event.preventDefault
+DOMselectors.form.addEventListener("submit", async function (event) {
+  event.preventDefault()
   var bar = `${DOMselectors.search_bar.value}` ;
   console.log(bar)
-  const URL4 = `https://api.le-systeme-solaire.net/rest/bodies/${bar}`
+  const newURL = `https://api.le-systeme-solaire.net/rest/bodies/${bar}`;
+  const data = await FetchURL(newURL)
+  console.log(data)
+  deletecards()
+  Enter(data)
+  DOMselectors.card_holder.classList.add("hidden")
 }
 )
 
 
-function Enter(planet) {
-  planet.forEach((moon) => {
-    document.querySelector(".planet_holder").insertAdjacentHTML('afterbegin', )
+const deletecards = function() {
+  DOMselectors.planet_holder.innerHTML = ''
+}
+deletecards()
+
+
+
+
+function Enter(moon) {
+  
+    document.querySelector("#planet_holder").insertAdjacentHTML('afterbegin', 
   ` <div class="planet_card">
   <h1 class="englishName">${moon.englishName}</h1>
   <h2 class="bodyType">${moon.bodyType}</h2>
@@ -124,9 +83,12 @@ function Enter(planet) {
   <h2 class="discoveredBy">${moon.discoveredBy}</h2>
   <h2 class="gravity">${moon.gravity}</h2>
   <h2 class="aroundPlanet">${moon.aroundPlanet}</h2>
-</div>`
-})
+</div>`)
+
 }
 
-const planetData = await Cool()
-Enter(planetData)
+
+DOMselectors.apodbtn.addEventListener("click", function(){
+  DOMselectors.card_holder.classList.remove("hidden")
+  deletecards() 
+})
