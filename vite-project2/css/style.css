@@ -26,9 +26,12 @@
     --third: var(--white)
   } */
  
-  body {
-    background-image: url("public/stars.jpg");
-    font-family: 'Lato', sans-serif
+   body {
+    background-image: url("public/space.jpg");
+    font-family: 'Lato', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
   }
 
   .apod_card {
@@ -75,6 +78,15 @@
 
   #form {
     color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
   }
 
   .planet_card {
@@ -97,10 +109,53 @@
   }
 
   .button {
-    margin-left: 50px;
     background-color: bisque;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: 50px;
+    color: rgb(19, 14, 51);
   }
+
+  
 
   .hidden {
     display: none;
   }
+
+  #search {
+    background-color: white;
+    border-radius: 10px;
+    color: rgb(19, 14, 51);
+  }
+
+  #btn {
+    background-color: white;
+    border-radius: 10px;
+    color: rgb(19, 14, 51);
+  }
+
+  #label {
+    background-color: white;
+    border-radius: 5px;
+    color: rgb(19, 14, 51);
+    size: 30px;
+    font-size: px; /* Set the desired font size */
+    width: 60px; /* Set the desired width */
+    padding: 10px; /* Add padding for better spacing */
+  }
+
+  #title {
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+    background-color: rgb(19, 14, 51);
+    margin-top: 40px;
+  }
+
+  
