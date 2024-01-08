@@ -48,8 +48,7 @@ function Insert(obj) {
   </div>`)};
 
 
-const nasadata = await FetchURL(`${url}${api_key}`)
-Insert(nasadata)
+
 
 DOMselectors.form.addEventListener("submit", async function (event) {
   event.preventDefault()
@@ -78,11 +77,11 @@ function Enter(moon) {
     document.querySelector("#planet_holder").insertAdjacentHTML('afterbegin', 
   ` <div class="planet_card">
   <h1 class="englishName">${moon.englishName}</h1>
-  <h2 class="bodyType">${moon.bodyType}</h2>
-  <h2 class="discoveryDate">${moon.discoveryDate}</h2>
-  <h2 class="discoveredBy">${moon.discoveredBy}</h2>
-  <h2 class="gravity">${moon.gravity}</h2>
-  <h2 class="aroundPlanet">${moon.aroundPlanet}</h2>
+  <h2 class="bodyType">Type: ${moon.bodyType}</h2>
+  <h2 class="discoveryDate">Discovery Date: ${moon.discoveryDate}</h2>
+  <h2 class="discoveredBy">Discovered By: ${moon.discoveredBy}</h2>
+  <h2 class="gravity">Gravity: ${moon.gravity}</h2>
+  <h2 class="aroundPlanet">Around Planet: ${moon.aroundPlanet.planet}</h2>
 </div>`)
 
 }
@@ -92,3 +91,10 @@ DOMselectors.apodbtn.addEventListener("click", function(){
   DOMselectors.card_holder.classList.remove("hidden")
   deletecards() 
 })
+
+async function load() {
+  const nasadata = await FetchURL(`${url}${api_key}`)
+  Insert(nasadata)
+}
+
+load()
