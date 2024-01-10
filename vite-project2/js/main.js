@@ -27,17 +27,7 @@ const FetchURL = async (request) => {
 }
 
 FetchURL()
-/* 
-document.querySelector("#btn").addEventListener("click", function () {
-  if (document.body.classList.contains("day")) {
-    document.body.classList.add("night");
-    document.body.classList.remove("day");
-  } else {
-    document.body.classList.add("day");
-    document.body.classList.remove("night");
-  }
-});
- */
+
 function Insert(obj) {
     DOMselectors.card_holder.insertAdjacentHTML('afterbegin', 
     `  <div class="apod_card">
@@ -73,7 +63,13 @@ deletecards()
 
 
 function Enter(moon) {
-  
+  var empty
+
+    if (moon.aroundPlanet == null) {
+      empty = "none"
+    } else {
+      empty = moon.aroundPlanet.planet
+    }
     document.querySelector("#planet_holder").insertAdjacentHTML('afterbegin', 
   ` <div class="planet_card">
   <h1 class="englishName">${moon.englishName}</h1>
@@ -81,7 +77,8 @@ function Enter(moon) {
   <h2 class="discoveryDate">Discovery Date: ${moon.discoveryDate}</h2>
   <h2 class="discoveredBy">Discovered By: ${moon.discoveredBy}</h2>
   <h2 class="gravity">Gravity: ${moon.gravity}</h2>
-  <h2 class="aroundPlanet">Around Planet: ${moon.aroundPlanet.planet}</h2>
+  <h2 class="aroundPlanet">Around Planet: ${empty}</h2>
+  
 </div>`)
 
 }
